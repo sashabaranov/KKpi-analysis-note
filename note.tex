@@ -1,0 +1,155 @@
+% $Id: main.tex 25184 2012-09-13 15:00:47Z mneedham $
+% ===============================================================================
+% Purpose: Template for LHCb documents
+% Authors: Tomasz Skwarnicki, Roger Forty, Ulrik Egede
+% Created on: 2010-09-24
+% ===============================================================================
+\documentclass[12pt,a4paper]{article}
+
+% Variables that controls behaviour
+%\usepackage{txfonts}
+%%\usepackage{amssymb}
+%\usepackage{slashbox}
+\usepackage{mathtools}
+%\usepackage{epstopdf}
+\usepackage{booktabs}
+\usepackage{epsfig}
+\usepackage{multirow}
+%%%%%
+\usepackage{lineno}  % for line numbering during review
+\usepackage{graphicx}  % to include figures (can also use other packages)
+\usepackage{xspace} % To avoid problems with missing or double spaces after
+                    % predefined symbold
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{amsmath} % Adds a large collection of math symbols
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{upgreek} % Adds in support for greek letters in roman typeset
+
+% Get hyperlinks to captions and in references.
+% These do not work with revtex. Use "hypertext" as class option instead.
+\usepackage{hyperref}    % Hyperlinks in references
+\usepackage[all]{hypcap} % Internal hyperlinks to floats.
+
+% Make this the last package you include before the \begin{document}
+\usepackage{cite}
+\usepackage{mciteplus}
+
+
+
+\usepackage{ifthen} % for conditional statements
+\newboolean{pdflatex}
+\setboolean{pdflatex}{true} % False for eps figures 
+
+\newboolean{articletitles}
+\setboolean{articletitles}{true} % False removes titles in references
+
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %True for upright particle symbols
+%
+\newcommand{\upsmm}{\nobreak{\ensuremath{\varUpsilon\rightarrow \mu^+\mu^-}}}
+\newcommand{\ups}{\ensuremath{\varUpsilon}}
+\newcommand{\upsns}{\ensuremath{\varUpsilon(nS)}}
+\newcommand{\ones}{\ensuremath{\varUpsilon(1S)}}
+\newcommand{\twos}{\ensuremath{\varUpsilon(2S)}}
+\newcommand{\threes}{\ensuremath{\varUpsilon(3S)}}
+\newcommand{\ismm}{\ensuremath{\varUpsilon(nS)\rightarrow\mu^{+}\mu^{-}}}
+\newcommand{\onesmm}{\ensuremath{\varUpsilon(1S)\rightarrow\mu^+\mu^-}}
+\newcommand{\twosmm}{\ensuremath{\varUpsilon(2S)\rightarrow\mu^+\mu^-}}
+\newcommand{\threesmm}{\ensuremath{\varUpsilon(3S)\rightarrow\mu^+\mu^-}}
+\newcommand{\bmm}{\ensuremath{\mathcal{B}(\mu^+\mu^-)}}
+\newcommand{\bmmis}{\ensuremath{\mathcal{B}(\varUpsilon(nS)\rightarrow\mu^+\mu^-)}}
+\newcommand{\bmmones}{\ensuremath{\mathcal{B}(\varUpsilon(1S)\rightarrow\mu^+\mu^-)}}
+\newcommand{\bmmtwos}{\ensuremath{\mathcal{B}(\varUpsilon(2S)\rightarrow\mu^+\mu^-)}}
+\newcommand{\bmmthrees}{\ensuremath{\mathcal{B}(\varUpsilon(3S)\rightarrow\mu^+\mu^-)}}
+\newcommand{\jpsi}{\ensuremath{$J/\psi$}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\bce}{\begin{center}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\ece}{\end{center}}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Title     %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\setcounter{footnote}{1}
+
+% %%%%%%% CHOOSE --------
+\input{title-LHCb-ANA}
+% \input{title-LHCb-CONF}
+% \input{title-LHCb-PAPER}
+% %%%%%%%%%%%%% ---------
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  Table of Content   %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Uncomment next 2 lines if desired
+\tableofcontents
+\cleardoublepage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Main text %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain} % restore page numbers for the main text
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+% %%%%%%% CHOOSE --------
+%% ----------------------------------
+%% Line numbering on the left margin 
+%% ----------------------------------
+%% Uncomment during review phase. 
+%% Comment it out before a final submission.
+\linenumbers
+%% --------------------------------
+% %%%%%%%%%%%%% ---------
+
+
+% You can include short sections directly in the main tex file.
+% However, for larger papers it is desirable to split the text into
+% several semiautonomous files, which can be revised independently.
+% This is especially useful when developing a document in
+% collaboration with several people, since then different parts can be
+% edited independently.  This type of file organization is shown here.
+% 
+
+% \input{src/Introduction.tex}
+
+% \input{src/Differences.tex}
+
+% \input{src/Dataset.tex}
+
+% \input{src/Trigger.tex}
+
+% \input{src/Selection.tex}
+
+\input{src/Efficiencies.tex}
+
+% \input{src/Systematics.tex}
+
+% \input{src/Results.tex}
+
+% \input{src/Acknowledgements.tex}
+
+\section{Appendix}
+Here put all the plots which might be too heavy for the 
+main body. Any important discussion should however be included
+in the main part of the note.
+\\
+
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{LHCb}
+\bibliography{lhcb-ana-BandQ-example}
+Using bibtex will make your life easier later!
+\end{document}
+

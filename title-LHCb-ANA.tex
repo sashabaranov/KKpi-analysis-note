@@ -1,0 +1,84 @@
+% $Id: title-LHCb-ANA.tex 26327 2012-10-09 14:49:13Z mneedham $
+% ===============================================================================
+% Purpose: LHCb-ANA Note title page template
+% Author: 
+% Created on: 2010-10-05
+% ===============================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  TITLE PAGE  %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+% Header ---------------------------------------------------
+\vspace*{-1.5cm}
+
+\hspace*{-0.5cm}
+\begin{tabular*}{\linewidth}{lc@{\extracolsep{\fill}}r}
+\ifthenelse{\boolean{pdflatex}}% Logo format choice
+{\vspace*{-2.7cm}\mbox{\!\!\!\includegraphics[width=.14\textwidth]{lhcb-logo.pdf}} & &}%
+{\vspace*{-1.2cm}\mbox{\!\!\!\includegraphics[width=.12\textwidth]{lhcb-logo.eps}} & &}
+ \\
+ & & LHCb-ANA-20XX-YYY \\  % ID 
+ & & \today \\ % Date - Can also hardwire e.g.: 23 March 2010
+ & & version 0.0\\
+\hline
+\end{tabular*}
+
+\vspace*{4.0cm}
+
+% Title --------------------------------------------------
+{\bf\boldmath\huge
+\begin{center}
+Observation of the decay $B_{u}^{+} \to J/\psi K^{+} K^{-} \pi^{+}$
+\end{center}
+}
+
+\vspace*{2.0cm}
+% Authors -------------------------------------------------
+\begin{center}
+V.~Belyaev$^1$,  G.~Manca$^2$\\
+{\it\footnotesize
+$^1$ITEP, Russia\\
+$^2$University and INFN of Cagliari, Italy\\
+}
+\end{center}
+
+
+\vspace{\fill}
+
+% Abstract -----------------------------------------------
+\begin{abstract}
+  \noindent
+State what you measure and the data sample you use.
+\end{abstract}
+
+\vspace*{2.0cm}
+\vspace{\fill}
+
+\end{titlepage}
+
+
+\pagestyle{empty}  % no page number for the title 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  EOD OF TITLE PAGE  %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  empty page follows the title page ----
+\newpage
+\setcounter{page}{2}
+\mbox{~}
+\begin{tabular}{|c|c|l|}
+\hline
+{\sc version} & {\sc date} & {\sc comments}\\
+\hline
+0.0 & 06.06.2012 & First version, about efficiencies\\
+\hline
+% 0.1 & 07.06.2012 & First version to the referees\\
+% \hline
+% 0.2 & 11.06.2012 & Added plots and tables\\
+% \hline
+\end{tabular}
+
+\cleardoublepage
