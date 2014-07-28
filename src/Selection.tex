@@ -1,8 +1,84 @@
 \section{Selection}
-This is a very crucial section. We would like to 
-see the selection clearly described, and possibly 
-a set of distributions of the variables 
-used in the selection, in data and MC.
-If you like, you can also add comparisons Mag Down vs. 
-Mag Up and 2011 vs. 2012 data.
-These checks are welcome but not required.
+% This is a very crucial section. We would like to 
+% see the selection clearly described, and possibly 
+% a set of distributions of the variables 
+% used in the selection, in data and MC.
+% If you like, you can also add comparisons Mag Down vs. 
+% Mag Up and 2011 vs. 2012 data.
+% These checks are welcome but not required.
+
+
+
+WG selection on K, $\pi$:
+
+\vspace*{0.5cm}
+\mbox{~}
+\begin{tabular}{|c|c|}
+\hline
+Variable & Cut \\
+\hline
+
+$P_{T}$ & $> 200 MeV/c$ \\
+CLONEDIST  & $> 5000$ \\
+Ghost Prob. & $< 0.5$ \\
+Track $\chi^{2}/ndof$ & $< 4$ \\
+$\eta$ & $\in (2, 5)$ \\
+P & $\in (3.2,150) GeV/c$\\
+$Prob. NN$ & $> 0.1$\\
+min $\,\chi^{2}_{IP}$ & $> 4$\\
+
+\hline
+\end{tabular}
+\vspace*{0.5cm}
+
+WG selection on B:
+
+\vspace*{0.5cm}
+\mbox{~}
+\begin{tabular}{|c|c|}
+\hline
+Variable & Cut \\
+\hline
+$\chi^{2}_{vtx}$ & $< 12$ \\
+$c\tau$ & $> 75 \mu m$ \\
+
+\hline
+\end{tabular}
+\vspace*{0.5cm}
+
+Custom selection:
+
+\vspace*{0.5cm}
+\mbox{~}
+\begin{tabular}{|c|c|}
+\hline
+Variable & Cut \\
+\hline
+$\chi^{2}_{DTF} / ndof$ (*) & $\in (0, 5)$ \\
+$c\tau(B^{+})$ (*) & $> 250 \mu m$ \\
+$\chi^{2}_{vtx.}(B^{+})$ & $< 20$ \\
+$p_{T}(\pi)$ & $> 0.3 GeV/c$ \\
+$p_{T}(K)$ & $> 0.6 GeV/c$ \\
+$M_{J/\psi}$ & $\in (3.020, 3.135) GeV/c^2$ \\
+$Prob.NN\,of\,K$ & $> 0.3$ \\
+$Prob.NN\,of\,\pi$ & $> 0.3$ \\
+$min \chi^{2}_{IP}(K, \pi)$ & $> 12$ \\
+\hline
+\end{tabular}
+\vspace*{0.5cm}
+
+
+Trigger:
+
+\vspace*{0.5cm}
+\mbox{~}
+\begin{tabular}{|c|c|c|}
+\hline
+L0 & HLT1 & HLT2 \\
+\hline
+DiMuon& DiMuon & DiMuon \\
+Muon& SingleMuon & ExpressJPsi \\
+& TrackMuon & SingleMuon \\
+\hline
+\end{tabular}
+\vspace*{0.5cm}
